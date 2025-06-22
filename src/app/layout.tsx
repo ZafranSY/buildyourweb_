@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Roboto, Lora } from "next/font/google" // Import Inter
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import  ThemeProvider  from "@/components/theme-provider"
 
 // Define Inter for headings and body text to match t3.chat aesthetic
 const inter = Inter({
