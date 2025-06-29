@@ -6,7 +6,8 @@ import { CheckCircle, XCircle } from "lucide-react"
 export function PricingSection() {
   return (
     <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-background transition-colors duration-300">
-      <div className="container px-4 md:px-6">
+      {/* Ensure the main container is centered with mx-auto */}
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl text-white">
@@ -19,7 +20,7 @@ export function PricingSection() {
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3">
           {/* Starter Package */}
-          <Card className="flex flex-col justify-between p-6 shadow-md bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <Card className="flex flex-col justify-between p-6 shadow-md bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] hover:border-2 hover:border-cta-button transition-all duration-300">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl font-bold">Starter</CardTitle>
               <p className="text-4xl font-extrabold mt-2">RM299</p>
@@ -48,7 +49,7 @@ export function PricingSection() {
           </Card>
 
           {/* Business Package */}
-          <Card className="flex flex-col justify-between p-6 shadow-md border-2 border-cta-button bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] hover:border-accent transition-all duration-300">
+          <Card className="flex flex-col justify-between p-6 shadow-md bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] hover:border-2 hover:border-cta-button transition-all duration-300">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl font-bold">Business</CardTitle>
               <p className="text-4xl font-extrabold mt-2">RM499</p>
@@ -77,7 +78,7 @@ export function PricingSection() {
           </Card>
 
           {/* Pro Package */}
-          <Card className="flex flex-col justify-between p-6 shadow-md bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <Card className="flex flex-col justify-between p-6 shadow-md bg-card text-card-foreground hover:shadow-lg hover:scale-[1.02] hover:border-2 hover:border-cta-button transition-all duration-300">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl font-bold">Pro</CardTitle>
               <p className="text-4xl font-extrabold mt-2">RM899</p>
@@ -105,9 +106,11 @@ export function PricingSection() {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-12">
+        
+        {/* === MODIFIED SECTION START === */}
+        <div className="mt-12 flex flex-col items-center">
           <h3 className="text-2xl font-heading font-bold text-center mb-6 text-white">Feature Comparison</h3>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto w-full max-w-5xl">
             <Table className="min-w-full bg-primary text-primary-foreground rounded-lg overflow-hidden">
               <TableHeader>
                 <TableRow className="bg-navbar-background text-white">
@@ -164,6 +167,8 @@ export function PricingSection() {
             </Table>
           </div>
         </div>
+        {/* === MODIFIED SECTION END === */}
+
       </div>
     </section>
   )

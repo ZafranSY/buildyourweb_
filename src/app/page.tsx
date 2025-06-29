@@ -1,42 +1,57 @@
 "use client"
 
 import { useState } from "react"
-import { useTheme } from "next-themes"
+import { services, testimonials, portfolioProjects } from "@/lib/data"
+
+// Import components individually to catch any missing exports
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
 import { WhatsappButton } from "@/components/whatsapp-button"
-import { services, testimonials, portfolioProjects } from "@/lib/data"
+
+// Dynamic imports for non-critical components
 import dynamic from "next/dynamic"
 
-// Dynamically import components that are not critical for initial load
-const ServicesSection = dynamic(() => import("@/components/services-section").then((mod) => mod.ServicesSection), {
-  ssr: false,
-})
-const PortfolioSection = dynamic(() => import("@/components/portfolio-section").then((mod) => mod.PortfolioSection), {
-  ssr: false,
-})
-const PricingSection = dynamic(() => import("@/components/pricing-section").then((mod) => mod.PricingSection), {
-  ssr: false,
-})
+const ServicesSection = dynamic(
+  () => import("@/components/services-section").then((mod) => ({ default: mod.ServicesSection })),
+  {
+    ssr: false,
+  },
+)
+const PortfolioSection = dynamic(
+  () => import("@/components/portfolio-section").then((mod) => ({ default: mod.PortfolioSection })),
+  {
+    ssr: false,
+  },
+)
+const PricingSection = dynamic(
+  () => import("@/components/pricing-section").then((mod) => ({ default: mod.PricingSection })),
+  {
+    ssr: false,
+  },
+)
 const TestimonialsSection = dynamic(
-  () => import("@/components/testimonials-section").then((mod) => mod.TestimonialsSection),
+  () => import("@/components/testimonials-section").then((mod) => ({ default: mod.TestimonialsSection })),
   { ssr: false },
 )
-const ShopeeCtaSection = dynamic(() => import("@/components/shopee-cta-section").then((mod) => mod.ShopeeCtaSection), {
-  ssr: false,
-})
+const ShopeeCtaSection = dynamic(
+  () => import("@/components/shopee-cta-section").then((mod) => ({ default: mod.ShopeeCtaSection })),
+  {
+    ssr: false,
+  },
+)
 const ContactFormSection = dynamic(
-  () => import("@/components/contact-form-section").then((mod) => mod.ContactFormSection),
+  () => import("@/components/contact-form-section").then((mod) => ({ default: mod.ContactFormSection })),
   { ssr: false },
 )
 
-export default function Component() {
+export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const theme = "dark" // Set theme to dark by default
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
+    // Theme toggle functionality can be added later
+    console.log("Theme toggle clicked")
   }
 
   const toggleMenu = () => {

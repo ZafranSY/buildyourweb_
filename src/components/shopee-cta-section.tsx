@@ -4,11 +4,12 @@ import { ShoppingCart } from "lucide-react"
 
 export function ShopeeCtaSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted text-primary-foreground text-center transition-colors duration-300">
-      <div className="container px-4 md:px-6 space-y-6">
-        <h2 className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl text-white">
+  <section id="shopee-cta" className="w-full py-12 md:py-24 lg:py-32 bg-muted transition-colors duration-300">
+      {/* Added mx-auto to center the container */}
+      <div className="container mx-auto flex flex-col items-center justify-center gap-4 px-4 text-center md:px-6">
+        <h3 className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl text-white">
           Need a quick website? Buy on Shopee!
-        </h2>
+        </h3>
         <p className="max-w-[800px] mx-auto text-lg md:text-xl text-muted-foreground">
           For fast, easy purchases of our streamlined web solutions, visit our Shopee store.
         </p>

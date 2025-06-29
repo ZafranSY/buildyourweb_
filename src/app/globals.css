@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -25,6 +26,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -37,6 +39,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-cta-button: var(--cta-button);
+  --color-cta-button-foreground: var(--cta-button-foreground);
+  --color-navbar-background: var(--navbar-background);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -45,24 +50,28 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --background: oklch(0.95 0.02 260); /* Light version of dark purple */
+  --foreground: oklch(0.2 0.02 260); /* Dark charcoal for text */
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: oklch(0.2 0.02 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.2 0.02 260);
+  --primary: oklch(0.11 0.03 260); /* Dark Purple/Black #1A1621 */
+  --primary-foreground: oklch(0.985 0 0); /* White */
+  --secondary: oklch(0.14 0.02 260); /* Dark Charcoal #221D28 */
+  --secondary-foreground: oklch(0.985 0 0); /* White */
+  --muted: oklch(0.9 0.01 260); /* Slightly lighter muted background */
+  --muted-foreground: oklch(0.4 0.01 260); /* Muted text */
+  --accent: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button in your design */
+  --accent-foreground: oklch(0.985 0 0); /* White */
+  --cta-button: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button in your design */
+  --cta-button-foreground: oklch(0.985 0 0); /* White */
+  --navbar-background: oklch(0.05 0.03 260); /* Deep Brown-Black #150F14 */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.8 0.01 260);
+  --input: oklch(1 0 0); /* White for input fields */
+  --ring: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -79,32 +88,36 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --background: oklch(0.11 0.03 260); /* #1A1621 Dark Purple/Black */
+  --foreground: oklch(0.83 0 0); /* #D3D3D3 Light Gray */
+  --card: oklch(0.14 0.02 260); /* #221D28 Dark Charcoal */
+  --card-foreground: oklch(0.985 0 0); /* White */
+  --popover: oklch(0.14 0.02 260);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.11 0.03 260); /* #1A1621 Dark Purple/Black */
+  --primary-foreground: oklch(0.985 0 0); /* White */
+  --secondary: oklch(0.14 0.02 260); /* #221D28 Dark Charcoal */
+  --secondary-foreground: oklch(0.985 0 0); /* White */
+  --muted: oklch(0.07 0.03 260); /* #150F14 Deep Brown-Black (for sections) */
+  --muted-foreground: oklch(0.83 0 0); /* Light Gray */
+  --accent: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button in your design */
+  --accent-foreground: oklch(0.985 0 0); /* White */
+  --cta-button: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button in your design */
+  --cta-button-foreground: oklch(0.985 0 0); /* White */
+  --navbar-background: oklch(0.05 0.03 260); /* #150F14 Deep Brown-Black for Navbar */
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.2 0.01 260);
+  --input: oklch(0.14 0.02 260); /* #221D28 Dark Charcoal for input fields */
+  --ring: oklch(0.65 0.3 300); /* Vibrant Purple - matches the button */
+  --chart-1: oklch(0.65 0.3 300); /* Updated to purple theme */
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.65 0.3 300); /* Updated to match purple theme */
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -118,5 +131,20 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

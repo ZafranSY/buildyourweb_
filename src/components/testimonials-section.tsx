@@ -15,8 +15,9 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-secondary transition-colors duration-300">
-      <div className="container px-4 md:px-6">
+    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-background transition-colors duration-300">
+      {/* Added mx-auto to center the container */}
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl text-white">
@@ -27,15 +28,12 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="p-6 shadow-md bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300"
-            >
-              <CardContent className="flex flex-col items-center text-center space-y-4">
-                <Avatar className="h-16 w-16">
-                  <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
+            <Card key={index} className="bg-card text-card-foreground shadow-md transition-colors duration-300">
+              <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                <Avatar className="mb-4 h-16 w-16">
+                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                   <AvatarFallback>
                     {testimonial.name
                       .split(" ")
@@ -43,18 +41,15 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                       .join("")}
                   </AvatarFallback>
                 </Avatar>
-                <div className="flex items-center gap-0.5">
+                <div className="flex items-center gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${
-                        i < testimonial.rating ? "fill-accent text-accent" : "fill-muted stroke-muted-foreground"
-                      }`}
-                    />
+                    <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? "text-accent fill-accent" : "text-muted-foreground"}`} />
                   ))}
                 </div>
-                <p className="text-lg italic text-white">"{testimonial.quote}"</p>
-                <p className="font-semibold text-accent">- {testimonial.name}</p>
+                <blockquote className="text-lg font-semibold leading-snug">
+                  "{testimonial.quote}"
+                </blockquote>
+                <p className="mt-4 text-sm text-muted-foreground">- {testimonial.name}</p>
               </CardContent>
             </Card>
           ))}
