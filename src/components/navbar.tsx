@@ -29,12 +29,12 @@ export function Navbar({ isMenuOpen, toggleMenu, theme, toggleTheme }: NavbarPro
           <Link href="#portfolio" className="text-white hover:text-accent transition-colors">
             Portfolio
           </Link>
-          <Link href="#testimonials" className="text-white hover:text-accent transition-colors">
+          {/* <Link href="#testimonials" className="text-white hover:text-accent transition-colors">
             Testimonials
           </Link>
           <Link href="#pricing" className="text-white hover:text-accent transition-colors">
             Pricing
-          </Link>
+          </Link> */}
           <Link
             href="https://shopee.com.my/your-dummy-product"
             target="_blank"
@@ -73,12 +73,12 @@ export function Navbar({ isMenuOpen, toggleMenu, theme, toggleTheme }: NavbarPro
             <Link href="#portfolio" className="text-white hover:text-accent transition-colors" onClick={toggleMenu}>
               Portfolio
             </Link>
-            <Link href="#testimonials" className="text-white hover:text-accent transition-colors" onClick={toggleMenu}>
+            {/* <Link href="#testimonials" className="text-white hover:text-accent transition-colors" onClick={toggleMenu}>
               Testimonials
             </Link>
             <Link href="#pricing" className="text-white hover:text-accent transition-colors" onClick={toggleMenu}>
               Pricing
-            </Link>
+            </Link> */}
             <Link
               href="https://shopee.com.my/your-dummy-product"
               target="_blank"

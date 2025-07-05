@@ -6,24 +6,24 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center text-center bg-secondary text-foreground overflow-hidden  duration-300"
+      className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center text-center bg-secondary text-foreground overflow-hidden  duration-300 backdrop-blur-md"
     >
-      {/* Background Image }
-      <div className="absolute top-0 left-0 w-full h-full">
+      {/* Background Image }*/}
+      <div className="absolute top-0 left-0 w-full h-full  backdrop-blur-md">
         <Image
-          src="/placeholder.svg?height=1080&width=1920" // Use placeholder.svg
+          src="/image.png?height=1080&width=1920" // Use placeholder.svg
           alt="Hero Background"
           layout="fill"
           objectFit="cover"
-          className="opacity-30"
+          className="opacity-30 filter blur-xs"
           priority // Set priority for LCP
         />
-      </div>*/}
+      </div>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-primary opacity-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-primary opacity-10 backdrop-blur-md"></div>
 
-      <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6 bg-secondary p-8 rounded-lg bg-opacity-80">
+      <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6 p-8 rounded-lg bg-opacity-80  ">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold leading-tight text-white">
           Build Your Web, Build Your Success.
         </h1>

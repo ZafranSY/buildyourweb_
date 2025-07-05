@@ -52,25 +52,41 @@ export const portfolioProjects = [
   {
     id: 1,
     image: "/placeholder.svg?height=400&width=600",
-    title: "Fashion E-commerce",
-    description: "A stylish online store for a local fashion boutique.",
+    title: "Co-Curricular Activity Management System",
+    description: "Web app for storing and categorizing academic resources",
+    link: "https://tailwindcss.com/docs/align-items#center", // Added example link
   },
   {
     id: 2,
     image: "/placeholder.svg?height=400&width=600",
-    title: "Cafe & Bistro Site",
-    description: "A vibrant website for a popular cafe, featuring menu and online reservations.",
+    title: "StudySync",
+    description: "Web app for storing and categorizing academic resources",
+    link: "https://tailwindcss.com/docs/align-items#center", // Added example link
   },
   {
     id: 3,
     image: "/placeholder.svg?height=400&width=600",
-    title: "Photography Portfolio",
-    description: "An elegant portfolio site for a professional photographer.",
+    title: "LokaLaku",
+    description: "An ecommerce mobile application that allow you sell out your product and services.",
+    link: "https://tailwindcss.com/docs/align-items#center", // Added example link
   },
   {
     id: 4,
     image: "/placeholder.svg?height=400&width=600",
-    title: "Consulting Landing Page",
-    description: "A high-converting landing page for a business consulting firm.",
+    title: "TVPSS",
+    description: "A website management system for johor school club develop using spring boot.",
+    link: "https://tailwindcss.com/docs/align-items#center", // Added example link
+  },
+  {
+    id: 5,
+    image: "/placeholder.svg?height=400&width=600",
+    title: "Takziah",
+    description: "A website management system for johor school club develop using spring boot.",
+    link: "https://takziah.xyz", // Added example link
   },
 ]
+
+export const WhatsAppContactSectionData = { // <--- Changed from [ { ... } ] to { ... }
+  phoneNumber: "60165972862", // Ensure this is the correct WhatsApp number
+  message: "Hello BuildMyWebsite",
+};

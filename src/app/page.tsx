@@ -1,13 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { services, testimonials, portfolioProjects } from "@/lib/data"
+import { services, testimonials, portfolioProjects,WhatsAppContactSectionData } from "@/lib/data"
 
 // Import components individually to catch any missing exports
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
 import { WhatsappButton } from "@/components/whatsapp-button"
+import {WhatsAppContactSection} from "@/components/whatsapp-contact-section"
 
 // Dynamic imports for non-critical components
 import dynamic from "next/dynamic"
@@ -66,9 +67,10 @@ export default function HomePage() {
         <HeroSection />
         <ServicesSection services={services} />
         <PortfolioSection portfolioProjects={portfolioProjects} />
-        <PricingSection />
-        <TestimonialsSection testimonials={testimonials} />
+        {/* <PricingSection /> */}
+        {/* <TestimonialsSection testimonials={testimonials} /> */}
         <ShopeeCtaSection />
+        <WhatsAppContactSection {...WhatsAppContactSectionData} />
         <ContactFormSection />
       </main>
       <Footer />
